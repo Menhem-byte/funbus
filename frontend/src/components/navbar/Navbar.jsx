@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
@@ -9,19 +9,19 @@ import "primeicons/primeicons.css";
 function Navbar() {
   const [click, setClick] = useState(false);
   const menuClick = () => setClick(!click);
-  const [button, setButton] = useState(true);
+  // const [button, setButton] = useState(true);
   const closeMobileMenu = () => setClick(false);
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
-  useEffect(() => {
-    showButton();
-  }, []);
-  window.addEventListener("resize", showButton);
+  // const showButton = () => {
+  //   if (window.innerWidth <= 960) {
+  //     setButton(false);
+  //   } else {
+  //     setButton(true);
+  //   }
+  // };
+  // useEffect(() => {
+  //   showButton();
+  // }, []);
+  // window.addEventListener("resize", showButton);
   return (
     <>
       <nav className="navbar">
