@@ -1,20 +1,39 @@
 import "./App.css";
 import Home from "./pages/MainPage";
 import AboutUs from "./components/aboutus/AboutUs";
-import Register from "./components/register/Register";
-import Navbar from "./components/navbar/Navbar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import RegistrationPage from "./pages/RegistrationPage";
+import Root from "./pages/Root";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      { index: true, element: <Home /> },
+      {
+        path: "signup",
+        element: <RegistrationPage />,
+      },
+      {
+        path: "aboutus",
+        element: <AboutUs />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-      </Routes>
-    </Router>
+    <RouterProvider router={router} />
+    // <Router>
+    //   <Navbar />
+    //   <Routes>
+    //     <Route path="/" exact element={<Home />} />
+    //     <Route path="/signup" element={<RegistrationPage />} />
+    //     <Route path="/aboutus" element={<AboutUs />} />
+    //   </Routes>
+    // </Router>
   );
 }
 

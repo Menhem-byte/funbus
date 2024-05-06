@@ -5,7 +5,9 @@ async function register(registerInfo) {
     if (!registerInfo) {
       throw new Error("registration info is required to register");
     }
-    const result = await knexInstance("reg.register").insert(registerInfo);
+    const result = await knexInstance("fun_bus.registration").insert(
+      registerInfo
+    );
     if (result) {
       return "record is registered successfully";
     }
