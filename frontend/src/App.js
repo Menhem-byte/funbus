@@ -2,13 +2,15 @@ import "./App.css";
 import Home from "./pages/MainPage";
 import AboutUs from "./components/aboutus/AboutUs";
 import RegistrationPage from "./pages/RegistrationPage";
-import Root from "./pages/Root";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RootLayout from "./pages/Root";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
       {

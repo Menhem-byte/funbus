@@ -172,7 +172,7 @@ function RegistrationForm() {
               rules={[{ required: true, message: "Please select your gender" }]}
             >
               <Select
-                placeholder="Pick your gender"
+                placeholder="Gender"
                 style={{
                   width: "100%",
                   height: "50px",

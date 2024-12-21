@@ -58,7 +58,8 @@
   height: 100%;
 }
 
-.nav-links:hover {
+.nav-links:hover,
+.nav-links:active {
   border-bottom: 4px solid #fff;
   transition: all 0.2s ease-out;
 }
@@ -107,7 +108,8 @@
     display: table;
   }
 
-  .nav-links:hover {
+  .nav-links:hover,
+  .nav-links:active {
     background-color: #fff;
     color: #242424;
     border-radius: 0;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import "./navbar.css";
@@ -37,28 +37,39 @@ function Navbar() {
           </div>
           <div className="menu-icon"></div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "nav-links" : "nav-links"
+                }
+                onClick={closeMobileMenu}
+                end
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
-            <li className="nav-item">
-              <Link
+            <li>
+              <NavLink
                 to="/signup"
-                className="nav-links"
+                className={({ isActive }) =>
+                  isActive ? "nav-links" : "nav-links"
+                }
                 onClick={closeMobileMenu}
               >
                 SignUp
-              </Link>
+              </NavLink>
             </li>
-            <li className="nav-item">
-              <Link
+            <li>
+              <NavLink
                 to="/aboutus"
-                className="nav-links"
+                className={({ isActive }) =>
+                  isActive ? "nav-links" : "nav-links"
+                }
                 onClick={closeMobileMenu}
               >
                 About Us
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
